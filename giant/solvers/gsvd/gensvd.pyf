@@ -1,0 +1,41 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module gensvd ! in 
+    interface  ! in :gensvd
+        subroutine dggsvd(m,n,p,z,a,b,work,iwork,u,v,q,alpha,beta,k,l,info)
+            callstatement (*f2py_func)("U","V","Q",&m,&n,&p,&k,&l,a,&m,b,&p,alpha,beta,u,&m,v,&p,q,&n,work,iwork,&info)
+
+            callprotoargument char*,char*,char*,int*,int*,int*,int*,int*,double*,int*,double*,int*,double*,double*,double*,int*,double*,int*,double*,int*,double*,int*,int*
+
+            integer intent(hide),depend(a):: m = shape(a,0)
+            integer intent(hide),depend(a):: n = shape(a,1)
+            integer intent(hide),depend(b):: p = shape(b,0)
+            integer intent(hide),depend(m,n,p):: z = MAX(MAX(3*n,m),p)+n
+            
+            double precision dimension(m,n),intent(in,out):: a
+            double precision dimension(p,n),intent(in,out):: b
+            double precision dimension(z),intent(hide,cache),depend(z):: work
+            integer dimension(n),intent(hide,cache),depend(n):: iwork
+            double precision dimension(n),intent(out),depend(n):: alpha
+            double precision dimension(n),intent(out),depend(n):: beta
+            double precision dimension(m,m),intent(out),depend(m):: u
+            double precision dimension(p,p),intent(out),depend(p):: v
+            double precision dimension(n,n),intent(out),depend(n):: q
+            integer intent(out):: k
+            integer intent(out):: l
+            integer intent(out):: info
+
+        end subroutine dggsvd
+    end interface 
+end python module gensvd
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
+
+!############################################################
+!# Program is part of GIAnT v1.0                            #
+!# Copyright 2012, by the California Institute of Technology#
+!# Contact: earthdef@gps.caltech.edu                        #
+!############################################################
+

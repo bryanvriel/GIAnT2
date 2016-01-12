@@ -14,20 +14,20 @@ stack operations.
     scipy.stats, logging
 """
 
-from . import stackutils as su
+#from . import stackutils as su
 import scipy.linalg as lm
 import scipy.stats as st
-from . import tsio
-from . import tsutils as tu
+#from . import tsio
+#from . import tsutils as tu
 import numpy as np
-from . import plots
-from . import gps
-from . import logmgr
-import solver.iterL1 as itr
+#from . import plots
+#from . import gps
+#from . import logmgr
+#import solver.iterL1 as itr
 import os
-from . import tropo as trp
+#from . import tropo as trp
 
-logger = logmgr.logger('giant')
+#logger = logmgr.logger('giant')
 
 class dummy:
     pass

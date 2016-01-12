@@ -1,0 +1,8 @@
+This is meant to be a python module written directly for use with Lapack's Generalized SVD routine.
+
+
+Instructions for compiling
+python setup.py build_ext --inplace --fcompiler=gnu95
+
+
+If you used f77 as your compiler of choice for Scipy, you do not need to specify the --fcompiler option.

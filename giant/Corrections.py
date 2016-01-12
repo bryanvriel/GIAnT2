@@ -15,11 +15,11 @@ for a Stack object.
 """
 
 import numpy as np
-from . import logmgr
 import os
-from . import tropo as trp
 
-logger = logmgr.logger('giant')
+#from . import logmgr
+#from . import tropo as trp
+#logger = logmgr.logger('giant')
 
 class Corrections:
     """

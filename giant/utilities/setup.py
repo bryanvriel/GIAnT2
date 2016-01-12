@@ -1,14 +1,12 @@
-#-*- coding: utf-8 -*-
 
 from __future__ import print_function
 import sys
+import os
 
 def configuration(parent_package='', top_path=None):
     from numpy.distutils.misc_util import Configuration
-    config = Configuration('giant', parent_package, top_path)
-    config.add_subpackage('utilities')
-    config.add_subpackage('solvers')
-    config.make_config_py()
+    from numpy.distutils.system_info import get_info
+    config = Configuration('utilities', parent_package, top_path)
     return config
 
 

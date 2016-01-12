@@ -8,4 +8,7 @@ from .Stack import Stack
 from .InsarPair import InsarPair
 from .Corrections import Corrections
 
+from . import solvers
+from . import utilities
+
 # end of file
